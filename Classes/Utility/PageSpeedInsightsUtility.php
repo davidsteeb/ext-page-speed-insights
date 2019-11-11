@@ -171,9 +171,6 @@ class PageSpeedInsightsUtility
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_pagespeedinsights_results');
 
-        $constraints = [
-            $queryBuilder->expr()->eq('t3ver_id', 0)
-        ];
         if ($pageId > 0) {
             $constraints[] = $queryBuilder->expr()->eq('page_id', $pageId);
         }
